@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fake News Detector</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+
+  <div class="container">
+    <h1>Fake News Detector</h1>
+
+    <div class="options">
+      <h2>Select an option to proceed:</h2>
+      <button onclick="showTextInput()">Fact-check a Claim or URL (Text-based)</button>
+      <button onclick="showImageUpload()">Analyze an Image (Image-based)</button>
+    </div>
+
+    <div class="form" id="textForm">
+      <h3>Enter a claim or URL:</h3>
+      <textarea id="textInput" placeholder="Enter the claim or URL here..."></textarea>
+      <button onclick="submitText()">Submit</button>
+      <div id="textResult" class="result-box"></div>
+    </div>
+
+    <div class="form" id="imageForm">
+      <h3>Upload an image for analysis:</h3>
+      <input type="file" id="imageInput" accept="image/*">
+      <button onclick="submitImage()">Submit</button>
+      <div id="imageResult" class="result-box"></div>
+    </div>
+
+    <div class="loading" id="loading">
+      <p>Loading...</p>
+    </div>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
